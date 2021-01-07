@@ -28,3 +28,4 @@ end
 if i % y ==0 && i % x!=0
 puts"buzz"
 end
+end
