@@ -1,0 +1,2 @@
+class Cricketer < ApplicationRecord
+end
