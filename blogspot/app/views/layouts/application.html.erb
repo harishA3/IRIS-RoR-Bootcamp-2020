@@ -8,17 +8,45 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
+  
+  
 
   <body>
-  <% if current_user %>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <%= link_to 'BlogSpot', root_path, class: 'navbar-brand' %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+      <a class="nav-link" href="/articles">All Articles</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/articles/new">New Article</a>
+        </li>
+        </ul>
+    </div>
+ </nav> 
+ <% if current_user %>
       Logged in as <%= current_user.email %>
       <%= link_to 'Log Out', logout_path %>
     <% else %>
       <%= link_to 'Sign Up', signup_path %>
       <%= link_to 'Log In', login_path, method: :delete %>
     <% end %>
+    
+
+ <div class="container">
+ <%= yield %>
+ <p>Page generated at:<%= DateTime.now %></p>
+</div>
+    
   </body>
-    <%= yield %>
-  
 </html>
