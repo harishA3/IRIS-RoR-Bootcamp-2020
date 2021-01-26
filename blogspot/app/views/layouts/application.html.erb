@@ -22,6 +22,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
@@ -41,12 +42,27 @@
       <%= link_to 'Sign Up', signup_path %>
       <%= link_to 'Log In', login_path, method: :delete %>
     <% end %>
-    
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <%= link_to 'All Users' , users_path,class: 'navbar-brand' %>
+     <button class="navbar toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <ul class="navbar-nav mr-auto">
+     <li class="nav-item">
+     <a class='nav link' href="/signup">New User</a>
+     </li>
+     </ul>
+     </div>
+     </nav>
+    
  <div class="container">
  <%= yield %>
  <p>Page generated at:<%= DateTime.now %></p>
-</div>
+</div> 
+
+
     
   </body>
 </html>
