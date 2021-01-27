@@ -8,19 +8,13 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <style>
-    .nav-item>a:hover
-    {
-      color :red ;
-    }
-    </style>
+  
     
   </head>
   
   
 
   <body>
-
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <%= link_to 'BlogSpot', root_path, class: 'navbar-brand' %>
   <%= link_to 'All Users' , users_path , class: 'navbar-brand' %>
@@ -35,16 +29,16 @@
       <li class="nav-item">
       <a class="nav-link" href="/articles">All Articles</a>
       </li>
-
-      <li class="nav-item">
+        <li class="nav-item">
         <a class="nav-link" href="/articles/new">New Article</a>
         </li>
         <li class="nav-item">
-        <a class='nav link' href="/signup">New User</a>
+        <%= link_to 'New User' , signup_path , class: 'nav-link' %>
         </li>
         </ul>
     </div>
  </nav> 
+ 
  <% if current_user %>
       Logged in as <%= current_user.email %>
       <%= link_to 'Log Out', logout_path %>
